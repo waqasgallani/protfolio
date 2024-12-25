@@ -31,7 +31,7 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
           Featured Projects
@@ -40,12 +40,12 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow transform hover:-translate-y-1"
             >
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -54,7 +54,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -66,7 +66,7 @@ const Projects = () => {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-blue-600 hover:text-blue-700"
+                      className="flex items-center text-blue-600 hover:text-blue-700 transition-colors"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />
                       Live Demo
@@ -77,7 +77,7 @@ const Projects = () => {
                       href={project.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-600 hover:text-gray-700"
+                      className="flex items-center text-gray-600 hover:text-gray-700 transition-colors"
                     >
                       <Github className="w-4 h-4 mr-1" />
                       Code
@@ -93,4 +93,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

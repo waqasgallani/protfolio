@@ -6,12 +6,16 @@ const Header = () => {
 
   const menuItems = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-md transition-shadow duration-300">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <div className="text-2xl font-extrabold text-gray-800 hover:text-blue-600 transition-colors">
-          <a href="#home">M. Waqas</a>
+          <a href="#home" aria-label="Go to home section">M. Waqas</a>
         </div>
 
         {/* Desktop Menu */}
@@ -21,6 +25,7 @@ const Header = () => {
               key={item}
               href={`#${item.toLowerCase()}`}
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              aria-label={`Go to ${item} section`}
             >
               {item}
             </a>
@@ -31,6 +36,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform"
+              aria-label="Visit GitHub profile"
             >
               <Github className="w-6 h-6 text-gray-700 hover:text-blue-600" />
             </a>
@@ -39,6 +45,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform"
+              aria-label="Visit LinkedIn profile"
             >
               <Linkedin className="w-6 h-6 text-gray-700 hover:text-blue-600" />
             </a>
@@ -48,7 +55,8 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? <X className="w-6 h-6 text-gray-800" /> : <Menu className="w-6 h-6 text-gray-800" />}
         </button>
@@ -62,7 +70,8 @@ const Header = () => {
               key={item}
               href={`#${item.toLowerCase()}`}
               className="block py-3 px-6 text-gray-700 hover:text-blue-600 font-medium border-b border-gray-100 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={toggleMenu}
+              aria-label={`Go to ${item} section`}
             >
               {item}
             </a>
@@ -73,6 +82,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform"
+              aria-label="Visit GitHub profile"
             >
               <Github className="w-6 h-6 text-gray-700 hover:text-blue-600" />
             </a>
@@ -81,6 +91,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-110 transition-transform"
+              aria-label="Visit LinkedIn profile"
             >
               <Linkedin className="w-6 h-6 text-gray-700 hover:text-blue-600" />
             </a>

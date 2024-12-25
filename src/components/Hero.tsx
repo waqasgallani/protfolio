@@ -21,13 +21,21 @@ const Hero = () => {
               Hi, I'm M. Waqas
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-600 mb-6">
-              Software Engineer & CEO at TWS Innovation
+              Software Engineer & CEO at{' '}
+              <a
+                href="https://twsinnovation.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                TWS Innovation
+              </a>
             </h2>
             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
               Passionate about leveraging technology to craft innovative, efficient, and scalable solutions. 
               With years of experience in software development and a knack for leadership, I turn ideas into reality.
             </p>
-            <ul className="text-gray-600 mb-8 text-lg list-disc pl-5">
+            <ul className="text-gray-600 mb-8 text-lg list-disc pl-5 space-y-2">
               <li>Expert in Web and Mobile App Development</li>
               <li>Proven Leadership in Building Scalable Teams</li>
               <li>Innovative Problem-Solver with a Results-Driven Mindset</li>
